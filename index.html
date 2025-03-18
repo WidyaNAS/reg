@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Sell Your Products to Indonesian Market for Dummies</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap');
+        
+        body {
+            font-family: 'Comic Sans MS', sans-serif;
+            background-color: #FFD700;
+            color: #000;
+            text-align: center;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        h1 {
+            font-size: 3em;
+            font-weight: bold;
+            color: #000;
+            text-shadow: 2px 2px 0px #fff, -2px -2px 0px #fff;
+            margin: 0 0 30px 0;
+        }
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            width: 100%;
+            max-width: 900px;
+        }
+        .category-button {
+            background-color: black;
+            color: #fff200;
+            padding: 15px 20px;
+            border: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.3s;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .category-button:hover {
+            background-color: white;
+            color: black;
+            transform: scale(1.1);
+        }
+        .flowchart {
+            display: none;
+            text-align: left;
+            background: white;
+            color: black;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            position: relative;
+        }
+        .flowchart h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .flowchart p {
+            margin-bottom: 15px;
+        }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: red;
+            color: white;
+            border: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>How to Sell Your Products to Indonesian Market <br> for Dummies</h1>
+    <div class="menu-wrapper">
+        <div class="button-container" id="button-container">
+            <button class="category-button" onclick="showFlowchart('dairy')">DAIRY</button>
+            <button class="category-button" onclick="showFlowchart('bakery')">BAKERY & PASTRY EXCLUDE DAIRY PRODUCTS</button>
+            <button class="category-button" onclick="showFlowchart('beverage')">BEVERAGE</button>
+            <button class="category-button" onclick="showFlowchart('frozen_fruit_vegg')">FROZEN FRUIT & VEGG</button>
+            <button class="category-button" onclick="showFlowchart('condiments_oil')">CONDIMENTS & OIL</button>
+            <button class="category-button" onclick="showFlowchart('convenience_food')">CONVENIENCE FOOD</button>
+            <button class="category-button" onclick="showFlowchart('organic_food_beverage')">ORGANIC FOOD & BEVERAGE</button>
+            <button class="category-button" onclick="showFlowchart('raw_seafood')">RAW SEAFOOD</button>
+        </div>
+    </div>
+
+    <div class="flowchart" id="flowchart">
+        <button class="close-button" onclick="hideFlowchart()">X</button>
+        <h2 id="flowchart-title"></h2>
+        <div id="flowchart-content"></div>
+    </div>
+
+    <script>
+        function showFlowchart(category) {
+            console.log("Clicked category: ", category);
+            let title = "";
+            let content = "";
+
+            if (category === "dairy") {
+                title = "Dairy Product Registration Flow";
+                content = `<p><strong>▶ Factory Registration:</strong> Factory must be approved and registered with SIMREK Indonesia (Veterinary Public Health).</p>`;
+                content += '<p><strong> ▶ Shipment:</strong>For the shipment of this product, it is mandatory to register and submit a Prior Notice through the website notice.karantinaindonesia.go.id before the goods are shipped, in order to comply with quarantine regulations and import requirements in Indonesia.</p>';
+            } else if (category === "bakery") {
+                title = "Bakery & Pastry (Excluding Dairy) Registration Flow";
+            } else if (category === "beverage") {
+                title = "Beverage Registration Flow";
+            } else if (category === "frozen_fruit_vegg") {
+                title = "Frozen Fruit & Vegetable Registration Flow";
+                content = `<p><strong>▶ Phytosanitary Certificate</strong> required for the registration and licensing process in Indonesia.</p>`;
+
+            } else if (category === "condiments_oil") {
+                title = "Condiments & Oil Registration Flow";
+            } else if (category === "convenience_food") {
+                title = "Convenience Food Registration Flow";
+            } else if (category === "organic_food_beverage") {
+                title = "Organic Food & Beverage Registration Flow";
+                content = `<p><strong>▶ Organic Certification:</strong> Must have an organic certificate, and a certificate from the body that issues organic certificates.</p>`;
+            } else if (category === "raw_seafood") {
+                title = "Raw Seafood Registration Flow";
+                content = '<p><strong>▶ Health Certificate:</strong> A Health Certificate issued by the authorized body in the country of origin is required.</p>';
+                content +='<p><strong>▶ Import Permit:</strong> An import permit from the Ministry of Marine Affairs and Fisheries of Indonesia must be obtained before shipment.</p>';
+                content += '<p><strong> ▶ Shipment:</strong>For the shipment of this product, it is mandatory to register and submit a Prior Notice through the website notice.karantinaindonesia.go.id before the goods are shipped, in order to comply with quarantine regulations and import requirements in Indonesia.</p>';
+
+            }
+
+            if (category !== "raw_seafood")
+                {content += `
+                <p><strong>▶ Halal Certification:</strong> Every product must have a halal certificate. There are two options:
+                    <ul>
+                        <li>Certification by a foreign halal certification body that has an MRA with BPJPH in Indonesia.</li>
+                        <li>Direct certification by BPJPH, requiring an on-site audit.</li>
+                    </ul>
+                </p>
+                <p><strong>▶ BPOM Registration:</strong> Required documents include:
+                    <ul>
+                        <li>Letter of Agreement, Health Certificate, Artwork</li>
+                        <li>Product & Packaging Specifications, Ingredient Breakdown</li>
+                        <li>Food Safety Certificates (GMP, HACCP, ISO 22000, etc.)</li>
+                        <li>Production Process, Production Code, Product Photos</li>
+                        <li>Product Laboratory Testing - conducted in Indonesia or by an accredited lab.</li>
+                    </ul>
+                </p>
+                <p><strong>▶ Marketing Campaign:</strong> Includes sampling, cooking demos, and social media promotions.</p>
+                <p><strong>▶ Supermarket Listing Fees:</strong>
+                    <ul>
+                        <li>Ranch Market: IDR 750K/SKU</li>
+                        <li>Farmers Market: IDR 1.4M/SKU</li>
+                        <li>Hero Supermarket: IDR 10M/product</li>
+                    </ul>
+                </p>
+                <p><strong>▶ Selling:</strong> Finalize agreements and launch sales.</p>
+            `;}
+
+            document.getElementById("flowchart-title").innerHTML = title;
+            document.getElementById("flowchart-content").innerHTML = content;
+            document.getElementById("flowchart").style.display = "block";
+            document.getElementById("button-container").style.display = "none";
+        }
+
+        function hideFlowchart() {
+            document.getElementById("flowchart").style.display = "none";
+            document.getElementById("button-container").style.display = "grid";
+        }
+    </script>
+</body>
+</html>
